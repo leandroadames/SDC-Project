@@ -1,0 +1,29 @@
+{
+  "name": "netflix_clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run dev:client\" \"npm run dev:backend\"",
+    "dev:client": "npm run dev --workspace=client",
+    "dev:backend": "npm run start --workspace=backend",
+    "host": "concurrently \"npm run host:client\" \"npm run host:backend\"",
+    "host:client": "npm run host --workspace=client",
+    "host:backend": "npm run host --workspace=backend",
+    "ssr": "node ./backend/server.js"
+  },
+  "workspaces": [
+    "backend",
+    "client"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1"
+  }
+}
